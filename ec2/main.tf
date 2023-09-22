@@ -7,13 +7,13 @@ terraform {
 }
 provider "aws" {
     region = "ap-southeast-1"
-    access_key = ""
-    secret_key = ""
+    access_key = "AKIASGOFNFJT7B7ZQI3R"
+    secret_key = "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"
 }
-resource "aws_instance" "aws" {
+resource "aws_instance" "world" {
     ami = "ami-072f48a9ed4f1bbda"
     instance_type = "t2.micro"
 }
 output "public_ip" {
-    value = 
+    value = aws_instance.world.public_ip
 }
